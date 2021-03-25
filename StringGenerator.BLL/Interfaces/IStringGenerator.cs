@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StringGenerator.BLL.Interfaces
 {
-    interface IStringGenerator
+    public interface IStringGenerator
     {
         string GenerateString(string alphabet, int lenght);
     }

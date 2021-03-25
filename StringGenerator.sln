@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringGenerator.WEB", "StringGenerator.WEB\StringGenerator.WEB.csproj", "{FF31FE6E-08D6-4DFD-913D-02070EAC1DF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringGenerator.WEB", "StringGenerator.WEB\StringGenerator.WEB.csproj", "{FF31FE6E-08D6-4DFD-913D-02070EAC1DF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringGenerator.BLL", "StringGenerator.BLL\StringGenerator.BLL.csproj", "{F7483A11-51FD-43CB-B16C-825D9C4B7684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringGenerator.BLL", "StringGenerator.BLL\StringGenerator.BLL.csproj", "{F7483A11-51FD-43CB-B16C-825D9C4B7684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringGenerator.Test", "StringGenerator.Test\StringGenerator.Test.csproj", "{057B0A91-B3FA-438C-9AA8-FAFAE1F6E7FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringGenerator.Test", "StringGenerator.Test\StringGenerator.Test.csproj", "{057B0A91-B3FA-438C-9AA8-FAFAE1F6E7FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
