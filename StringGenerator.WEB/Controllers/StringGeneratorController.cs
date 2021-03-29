@@ -7,7 +7,7 @@ using StringGenerator.WEB.Filters;
 namespace StringGenerator.WEB.Controllers
 {
 
-    [Route("api/strings")]
+    
     [ApiController]
     [StringGenerationExceptionFilter]
     public class StringGeneratorController : ControllerBase
@@ -20,7 +20,22 @@ namespace StringGenerator.WEB.Controllers
         }
 
         [HttpPost]
-        public async Task<StringSet> GenerateString([FromBody] StringGenerationRequest request)
+        [Route("api/strings")]
+        public async Task<StringSet> GenerateFromBody([FromBody] StringGenerationRequest request)
+        {
+            return await mediator.Send(request);
+        }
+
+        [HttpGet]
+        [Route("api/strings/{alphabet}/{length}/{count}/{returnOcurrences}")]
+        public async Task<StringSet> GenerateFromRoute([FromRoute] StringGenerationRequest request)
+        {
+            return await mediator.Send(request);
+        }
+
+        [HttpGet("{alphabet}/{length}/{count}/{returnOcurrences}")]
+        [Route("api/strings")]
+        public async Task<StringSet> GenerateFromQuery([FromQuery] StringGenerationRequest request)
         {
             return await mediator.Send(request);
         }
