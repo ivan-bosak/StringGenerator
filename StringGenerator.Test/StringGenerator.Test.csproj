@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StringGenerator.BLL\StringGenerator.BLL.csproj" />
+    <ProjectReference Include="..\StringGenerator.WEB\StringGenerator.WEB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

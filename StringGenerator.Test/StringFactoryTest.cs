@@ -52,8 +52,10 @@ namespace StringGenerat
         {
             var result = _stringFactory.GenerateString(alphabet, length);
 
-            foreach (var character in result.ToCharArray())
+            Assert.IsFalse(String.IsNullOrEmpty(result));
+            foreach (var character in result.ToCharArray()) 
                 Assert.IsTrue(alphabet.Contains(character), $"Character {character} is not present in generated string!");
+
             Assert.AreEqual(length, result.Length, "Invalid length of generated string!");
         }
     }

@@ -24,6 +24,7 @@ namespace StringGenerator.Test
 
             var setOfStrings = stringGenratorService.GenerateSetOfStrings(alphabet, length, count, stringFactoryMoq.Object);
 
+            Assert.IsNotNull(setOfStrings);
             Assert.AreEqual(count, setOfStrings.Count(), "Incorrect size of set!");
             foreach (var set in setOfStrings)
                 Assert.AreEqual(length, set.Length, "Incorrect length of generated string!");
@@ -37,6 +38,7 @@ namespace StringGenerator.Test
 
             var setOccurences = stringGenratorService.CountOcurrencesInSet(alphabet, setOfStrings);
 
+            Assert.IsNotNull(setOccurences);
             Assert.AreEqual(alphabet.Length, setOccurences.Count());
             foreach (var str in setOccurences)
                 Assert.AreEqual(setOfStrings.Sum(s => s.Count(ch => ch == str.Key)), str.Value);
