@@ -11,6 +11,6 @@ namespace StringGenerator.WEB.Models
         public string Alphabet { get; set; }
         public int Length { get; set; }
         public int Count { get; set; }
-        public bool ReturnOcurrences { get; set; }
+        public bool ReturnSet { get; set; }
     }
 }

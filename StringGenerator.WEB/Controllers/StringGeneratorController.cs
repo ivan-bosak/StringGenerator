@@ -27,13 +27,13 @@ namespace StringGenerator.WEB.Controllers
         }
 
         [HttpGet]
-        [Route("api/strings/{alphabet}/{length}/{count}/{returnOcurrences}")]
+        [Route("api/strings/{alphabet}/{length}/{count}/{returnSet}")]
         public async Task<StringSet> GenerateFromRoute([FromRoute] StringGenerationRequest request)
         {
             return await mediator.Send(request);
         }
 
-        [HttpGet("{alphabet}/{length}/{count}/{returnOcurrences}")]
+        [HttpGet("{alphabet}/{length}/{count}/{returnSet}")]
         [Route("api/strings")]
         public async Task<StringSet> GenerateFromQuery([FromQuery] StringGenerationRequest request)
         {

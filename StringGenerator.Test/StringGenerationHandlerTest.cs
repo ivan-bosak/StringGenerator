@@ -39,7 +39,7 @@ namespace StringGenerator.Test
         [Test]
         public async Task HandleGenRequest_ReturnOccurencesIsFalse_AlphabetOcurrencesIsNull()
         {
-            request.ReturnOcurrences = false;
+            request.ReturnSet = false;
 
             var result = await handler.Handle(request,  default);
 
@@ -50,7 +50,7 @@ namespace StringGenerator.Test
         [Test]
         public async Task HandleGenRequest_ReturnOccurencesIsTrue_ReturnsAlphabetOcurrences()
         {
-            request.ReturnOcurrences = true;
+            request.ReturnSet = true;
 
             var result = await handler.Handle(request, default);
 

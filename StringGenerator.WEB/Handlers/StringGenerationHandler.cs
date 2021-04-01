@@ -25,25 +25,16 @@ namespace StringGenerator.WEB.Handlers
 
         public Task<StringSet> Handle(StringGenerationRequest request, CancellationToken cancellationToken)
         {
-                return Task<StringSet>.Run(() =>
-                {
-                    try
-                    {
-                        var stringQuery = request;
-                        var result = new StringSet();
+            var result = new StringSet();
 
-                        result.SetOfStrings = generatorService.GenerateSetOfStrings(stringQuery.Alphabet, stringQuery.Length, stringQuery.Count, stringGenerator);
+            var generatedSet = generatorService.GenerateSetOfStrings(request.Alphabet, request.Length, request.Count, stringGenerator);
 
-                        if (stringQuery.ReturnOcurrences)
-                            result.AlphabetOcurrences = generatorService.CountOcurrencesInSet(stringQuery.Alphabet, result.SetOfStrings);
+            if (request.ReturnSet)
+                result.SetOfStrings = generatedSet;
 
-                        return result;
-                    }
-                    catch (Exception)
-                    {
-                        throw;
-                    }
-                });
+            result.AlphabetOcurrences = generatorService.CountOcurrencesInSet(request.Alphabet, generatedSet);
+
+            return Task.FromResult(result);
         }
     }
 }

@@ -30,20 +30,12 @@ namespace StringGenerator
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
+            app.UseHttpsRedirection()
+                .UseRouting()
+                .UseEndpoints(endpoints =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
-                });
-
-                endpoints.MapControllers();
-            });
+                    endpoints.MapControllers();
+                }); 
         }
     }
 }
