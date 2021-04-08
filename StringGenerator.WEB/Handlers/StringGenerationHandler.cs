@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using StringGenerator.BLL.Interfaces;
 using StringGenerator.WEB.Models;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -23,18 +24,18 @@ namespace StringGenerator.WEB.Handlers
             this.stringGenerator = stringGenerator;
         }
 
-        public Task<StringSet> Handle(StringGenerationRequest request, CancellationToken cancellationToken)
+        public async Task<StringSet> Handle(StringGenerationRequest request, CancellationToken cancellationToken)
         {
             var result = new StringSet();
 
-            var generatedSet = generatorService.GenerateSetOfStrings(request.Alphabet, request.Length, request.Count, stringGenerator);
+            var generatedSet = await generatorService.GenerateSetOfStrings(request.Alphabet, request.Length, request.Count, stringGenerator);
 
             if (request.ReturnSet)
                 result.SetOfStrings = generatedSet;
 
             result.AlphabetOcurrences = generatorService.CountOcurrencesInSet(request.Alphabet, generatedSet);
 
-            return Task.FromResult(result);
+            return result;
         }
     }
 }

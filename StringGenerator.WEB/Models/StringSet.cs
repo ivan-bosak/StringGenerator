@@ -6,5 +6,6 @@ namespace StringGenerator.WEB.Models
     {
         public IEnumerable<string> SetOfStrings { get; set; }
         public IEnumerable<KeyValuePair<char, int>> AlphabetOcurrences { get; set; }
+        public double RequestDurationInSeconds { get; set; }
     }
 }

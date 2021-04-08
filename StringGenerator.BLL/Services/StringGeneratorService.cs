@@ -3,21 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace StringGenerator.BLL.Services
 {
     public class StringGeneratorService: IGeneratorService
     {
-
-        public IEnumerable<string> GenerateSetOfStrings(string alphabet, int lenght, int count, IStringGenerator stringGenerator)
+        public async Task<IEnumerable<string>> GenerateSetOfStrings(string alphabet, int lenght, int count, IStringGenerator stringGenerator)
         {
             if (count <= 0)
                 throw new ArgumentException("Count can not be less or equal to 0!");
 
-            var setOfStrings = new List<string>();
+            var tasks = new List<Task<string>>();
 
-            for (int i = 0; i < count; i++)
-                setOfStrings.Add(stringGenerator.GenerateString(alphabet, lenght));
+            for (int i = 0; i < count; i++) 
+                tasks.Add(Task<string>.Run(() => stringGenerator.GenerateString(alphabet, lenght)));
+
+            var setOfStrings = await Task.WhenAll(tasks);
 
             return setOfStrings;
         }
