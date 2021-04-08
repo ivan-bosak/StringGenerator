@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace StringGenerator.WEB.Models
+namespace StringGenerator.BLL.Models
 {
     public class StringSet
     {

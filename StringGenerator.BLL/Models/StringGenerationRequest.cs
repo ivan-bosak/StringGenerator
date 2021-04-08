@@ -1,10 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace StringGenerator.WEB.Models
+namespace StringGenerator.BLL.Models
 {
     public class StringGenerationRequest: IRequest<StringSet>
     {

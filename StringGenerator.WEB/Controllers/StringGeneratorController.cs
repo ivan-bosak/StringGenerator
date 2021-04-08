@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using MediatR;
-using StringGenerator.WEB.Models;
 using StringGenerator.WEB.Filters;
 using System;
-using StringGenerator.WEB.Handlers;
+using StringGenerator.BLL.Models;
 
 namespace StringGenerator.WEB.Controllers
 {

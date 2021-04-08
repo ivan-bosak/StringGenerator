@@ -1,8 +1,7 @@
 ﻿using MediatR;
 using MediatR.Pipeline;
-using Microsoft.AspNetCore.Http;
 using StringGenerator.BLL.Interfaces;
-using StringGenerator.WEB.Models;
+using StringGenerator.BLL.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace StringGenerator.WEB.Handlers
+namespace StringGenerator.BLL.Handlers
 {
     public class StringGenerationHandler : IRequestHandler<StringGenerationRequest, StringSet>
     {

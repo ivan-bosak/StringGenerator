@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/6XQBXXXwEpyN86Ja0ru4VUi3eLftPKF8SB21qfXpUkN3na3qoN6KdV//mZrWvdlIcy4tlyRHFAKqCx76xLerA==",
+  "dgSpecHash": "1NOXfreX2BrrYtF4NsjNaUBSoZo3VsDBOEiFWTbEa8aIVt+ldNuOHW7fV5kUDZILQL7l175lPtyha2pSr1faBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ibosa\\Projects\\StringGenerator\\StringGenerator\\StringGenerator.BLL\\StringGenerator.BLL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ibosa\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
